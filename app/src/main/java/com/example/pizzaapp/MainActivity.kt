@@ -13,5 +13,6 @@ class MainActivity : AppCompatActivity() {
         //ljkgbg
         //Hallo
         // Hallo zurück
+        // Test Chregu 1
     }
 }
