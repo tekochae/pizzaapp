@@ -15,5 +15,6 @@ class MainActivity : AppCompatActivity() {
         // Hallo zurück
         // Test Chregu 1
         // Test Luca
+        // Test Chregu 2
     }
 }
