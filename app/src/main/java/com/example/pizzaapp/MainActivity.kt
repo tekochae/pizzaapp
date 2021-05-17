@@ -17,5 +17,6 @@ class MainActivity : AppCompatActivity() {
         // Test Luca
         // Test Chregu 2
         // Test Luca 2
+        // Test Simon
     }
 }
