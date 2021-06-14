@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Pizzaapp</string>
+    
+    <string-array name="choosepizzatyp">
+        <item>Napoletana</item>
+        <item>American</item>
+        <item>Swiss</item>
+    </string-array>
+
+    <string-array name="choosepizzaanzahl">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="choosepizzagroesse">
+        <item>klein (28cm)</item>
+        <item>mittel (32cm)</item>
+        <item>gross (40cm)</item>
+    </string-array>
 </resources>
