@@ -1,19 +1,17 @@
-/*
 package com.example.pizzaapp.domain
 
-class Swiss(val anzahl: Int, val groesse: Groesse): Pizzateig {
-    val Zutaten = arrayListOf<Zutaten>()
+class Swiss(anzahl: Int, groesse: Groesse): Pizzateig(anzahl, groesse) {
+    val zutaten = arrayListOf<Zutat>()
 
     init {
-        Zutaten.add(Zutaten("Mehl", 25.0))
-        Zutaten.add(Zutaten("Wasser", 25.0))
-        Zutaten.add(Zutaten("Salz", 25.0))
-        Zutaten.add(Zutaten("Trockenhefe", 25.0))
+        zutaten.add(Zutat("Mehl", 30.0))
+        zutaten.add(Zutat("Wasser", 10.0))
+        zutaten.add(Zutat("Salz", 20.0))
+        zutaten.add(Zutat("Trockenhefe", 20.0))
+        zutaten.add(Zutat("Käse", 20.0))
     }
-*/
-/**//*
 
-    override fun rezeptBerechnung(): Double {
-        return 0.0
+    override fun getZutaten(): List<Zutat> {
+        return zutaten
     }
-}*/
+}

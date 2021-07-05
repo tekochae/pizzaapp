@@ -1,12 +1,19 @@
 package com.example.pizzaapp.domain
 
 abstract class Pizzateig(val anzahl: Int, val groesse: Groesse) {
-    //fun getRezept()
+
     fun getGesamtteigmenge(): Double {
         return anzahl.toDouble() * groesse.gramm.toDouble()
     }
 
-    abstract fun rezeptBerechnung(): List<Zutaten>
+    fun rezeptBerechnung(): List<BerechneteZutat> {
+        val berechneteZutat = mutableListOf<BerechneteZutat>()
+        for(zutat in getZutaten()){
+            berechneteZutat.add(BerechneteZutat(zutat.bezeichnung, getGesamtteigmenge()*zutat.prozentberechnungzutat))
+        }
+        return berechneteZutat
+    }
+    abstract fun getZutaten(): List<Zutat>
 
 }
 

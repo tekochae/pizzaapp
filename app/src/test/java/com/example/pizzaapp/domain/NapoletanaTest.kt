@@ -10,15 +10,15 @@ class NapoletanaTest {
     fun `Teigwerte` () {
         val sut = Napoletana(3, Groesse.KLEIN_24)
 
-        Assertions.assertThat(sut.Zutaten.size).isEqualTo(4)
-        Assertions.assertThat(sut.Zutaten[0].bezeichnung).isEqualTo("Mehl")
-        Assertions.assertThat(sut.Zutaten[0].prozent).isEqualTo(58.2)
-        Assertions.assertThat(sut.Zutaten[1].bezeichnung).isEqualTo("Wasser")
-        Assertions.assertThat(sut.Zutaten[1].prozent).isEqualTo(40.1)
-        Assertions.assertThat(sut.Zutaten[2].bezeichnung).isEqualTo("Salz")
-        Assertions.assertThat(sut.Zutaten[2].prozent).isEqualTo(1.6)
-        Assertions.assertThat(sut.Zutaten[3].bezeichnung).isEqualTo("Trockenhefe")
-        Assertions.assertThat(sut.Zutaten[3].prozent).isEqualTo(0.1)
+        Assertions.assertThat(sut.zutaten.size).isEqualTo(4)
+        Assertions.assertThat(sut.zutaten[0].bezeichnung).isEqualTo("Mehl")
+        Assertions.assertThat(sut.zutaten[0].prozent).isEqualTo(58.2)
+        Assertions.assertThat(sut.zutaten[1].bezeichnung).isEqualTo("Wasser")
+        Assertions.assertThat(sut.zutaten[1].prozent).isEqualTo(40.1)
+        Assertions.assertThat(sut.zutaten[2].bezeichnung).isEqualTo("Salz")
+        Assertions.assertThat(sut.zutaten[2].prozent).isEqualTo(1.6)
+        Assertions.assertThat(sut.zutaten[3].bezeichnung).isEqualTo("Trockenhefe")
+        Assertions.assertThat(sut.zutaten[3].prozent).isEqualTo(0.1)
 
     }
 
@@ -47,24 +47,19 @@ class NapoletanaTest {
     }
 
     @Test
-    fun `Berechne Rezept` () {
+    fun `Berechne Zutaten für Napoletana` () {
         val sut = Napoletana(2, Groesse.KLEIN_24)
         val berechneteZutaten = sut.rezeptBerechnung()
-        val gesamtteigmenge = sut.getGesamtteigmenge()
+        Assertions.assertThat(berechneteZutaten.size).isEqualTo(4)
         Assertions.assertThat(berechneteZutaten[0].bezeichnung).isEqualTo("Mehl")
-        Assertions.assertThat(berechneteZutaten[0].prozent).isEqualTo(58.2)
-        Assertions.assertThat(gesamtteigmenge).isEqualTo(480.0)
-        Assertions.assertThat(berechneteZutaten).isEqualTo(279.36)
+        Assertions.assertThat(berechneteZutaten[0].zutatrundenzweistellen).isEqualTo(279.36)
+        Assertions.assertThat(berechneteZutaten[1].bezeichnung).isEqualTo("Wasser")
+        Assertions.assertThat(berechneteZutaten[1].zutatrundenzweistellen).isEqualTo(192.48)
+        Assertions.assertThat(berechneteZutaten[2].bezeichnung).isEqualTo("Salz")
+        Assertions.assertThat(berechneteZutaten[2].zutatrundenzweistellen).isEqualTo(7.68)
+        Assertions.assertThat(berechneteZutaten[3].bezeichnung).isEqualTo("Trockenhefe")
+        Assertions.assertThat(berechneteZutaten[3].zutatrundenzweistellen).isEqualTo(0.48)
 
     }
 }
 
-//Zutaten Test, eigener erstellen
-//@Test
-//fun `napoletana werte anziehen` () {
-    //val sut = Zutaten("Mehl", 58.2)
-
-    //Assertions.assertThat(sut.bezeichnung).isEqualTo("Mehl")
-    //Assertions.assertThat(sut.prozent).isEqualTo(58.2)
-
-//}
