@@ -19,4 +19,10 @@
         <item>mittel (32cm)</item>
         <item>gross (40cm)</item>
     </string-array>
+
+    <string-array name="choosefermentierung">
+        <item>Kühlschrank</item>
+        <item>Raumtemperatur</item>
+    </string-array>
+
 </resources>
