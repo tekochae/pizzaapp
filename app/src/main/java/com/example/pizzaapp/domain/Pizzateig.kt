@@ -25,6 +25,6 @@ abstract class Pizzateig(val anzahl: Int, val groesse: Groesse) : Serializable {
 
 }
 
-enum class Groesse(val gramm: Int) {
+enum class Groesse(val gramm: Int) : Serializable {
     KLEIN_24(240), MITTEL_28(280), GROSS_32(320)
 }
