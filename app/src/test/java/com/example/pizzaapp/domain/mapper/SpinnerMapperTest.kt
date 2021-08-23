@@ -3,6 +3,7 @@ package com.example.pizzaapp.domain.mapper
 import com.example.pizzaapp.domain.American
 import com.example.pizzaapp.domain.Groesse
 import com.example.pizzaapp.domain.Napoletana
+import com.example.pizzaapp.domain.Swiss
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 
@@ -47,6 +48,24 @@ class SpinnerMapperTest {
         Assertions.assertThat(typMapper).isInstanceOf(Napoletana::class.java)
         Assertions.assertThat(typMapper.anzahl).isEqualTo(1)
         Assertions.assertThat(typMapper.groesse).isEqualTo(Groesse.KLEIN_24)
+
+    }
+
+    @Test
+    fun `Mappe Typ American` () {
+        val typMapper = typMapper("American", 2, Groesse.GROSS_32)
+        Assertions.assertThat(typMapper).isInstanceOf(American::class.java)
+        Assertions.assertThat(typMapper.anzahl).isEqualTo(2)
+        Assertions.assertThat(typMapper.groesse).isEqualTo(Groesse.GROSS_32)
+
+    }
+
+    @Test
+    fun `Mappe Typ Swiss` () {
+        val typMapper = typMapper("Swiss", 4, Groesse.MITTEL_28)
+        Assertions.assertThat(typMapper).isInstanceOf(Swiss::class.java)
+        Assertions.assertThat(typMapper.anzahl).isEqualTo(4)
+        Assertions.assertThat(typMapper.groesse).isEqualTo(Groesse.MITTEL_28)
 
     }
 

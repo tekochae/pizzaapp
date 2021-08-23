@@ -1,6 +1,8 @@
 package com.example.pizzaapp.domain
 
-abstract class Pizzateig(val anzahl: Int, val groesse: Groesse) {
+import java.io.Serializable
+
+abstract class Pizzateig(val anzahl: Int, val groesse: Groesse) : Serializable {
 
     fun getGesamtteigmenge(): Double {
         return anzahl.toDouble() * groesse.gramm.toDouble()
@@ -13,6 +15,12 @@ abstract class Pizzateig(val anzahl: Int, val groesse: Groesse) {
         }
         return berechneteZutat
     }
+
+    fun anzeigeBerechnung(): String {
+        return rezeptBerechnung().joinToString("\n") { "${it.bezeichnung}:\t\t${it.zutatrundenzweistellen}"}
+    }
+
+
     abstract fun getZutaten(): List<Zutat>
 
 }

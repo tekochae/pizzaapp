@@ -5,30 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EC1F27"
-    tools:context=".ResultActivity">
-
-    <Spinner
-        android:id="@+id/choosefermentierung"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/buttonmakePizza"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerpic2" />
+    tools:context=".InstructionActivity">
 
     <Button
-        android:id="@+id/buttonmakePizza"
+        android:id="@+id/buttonTimer"
         android:layout_width="175dp"
         android:layout_height="75dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:background="#F1D73F"
-        android:text="Make Pizza"
+        android:text="Timer stellen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/buttonzurueckChoose1"
+        android:id="@+id/buttonzurueckChoose2"
         android:layout_width="175dp"
         android:layout_height="75dp"
         android:layout_marginStart="10dp"
@@ -39,7 +30,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/headerpic2"
+        android:id="@+id/headerpic3"
         android:layout_width="350dp"
         android:layout_height="100dp"
         android:layout_marginStart="10dp"
@@ -49,16 +40,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/header" />
-
-    <TextView
-        android:id="@+id/AnzeigeBerechnungZutaten"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/choosefermentierung"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerpic2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

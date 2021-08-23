@@ -65,5 +65,14 @@ class SwissTest {
         Assertions.assertThat(berechneteZutaten[4].zutatrundenzweistellen).isEqualTo(112.0)
 
     }
+
+    @Test
+    fun `Test Anzeige Zutaten` () {
+        val sut = Swiss(2, Groesse.MITTEL_28)
+        val anzeige = sut.anzeigeBerechnung()
+        Assertions.assertThat(anzeige).isEqualTo("Mehl:\t\t168.0\nWasser:\t\t56.0\nSalz:\t\t112.0\nTrockenhefe:\t\t112.0\nKäse:\t\t112.0")
+
+    }
+
 }
 

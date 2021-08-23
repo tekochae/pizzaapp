@@ -1,5 +1,6 @@
 package com.example.pizzaapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
@@ -16,7 +17,7 @@ class ChooseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.choose)
+        setContentView(R.layout.activity_choose)
 
         spinnertyp = findViewById(R.id.choosepizzatyp);
         ArrayAdapter.createFromResource(
@@ -61,6 +62,11 @@ class ChooseActivity : AppCompatActivity() {
         val anzahlMapper = anzahlMapper(spinneranzahl.selectedItem.toString())
         val pizzateig = typMapper(spinnertyp.selectedItem.toString(), anzahlMapper, groesseMapper)
         //Code von Intent Wechsel auf Rezept Activity noch einbinden --> put Extra Tipe Mapper
+
+        val intent = Intent(this, ResultActivity::class.java)
+        intent.putExtra("Zutaten-Infos", pizzateig)
+        startActivity(intent)
     }
+
 
 }
