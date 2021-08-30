@@ -5,26 +5,28 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.AlarmClock
 import android.view.View
+import android.widget.TextView
+import com.example.pizzaapp.domain.Fermentierung
+import com.example.pizzaapp.domain.Pizzateig
 
 class InstructionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_instruction)
+
+        val fermentiere = intent.extras?.get("Fermentierungsprozess") as Fermentierung
+        val anzeige = findViewById<TextView>(R.id.AnzeigeFermentierungsprozess)
+        anzeige.text = fermentiere.fermentierungsart
     }
-    fun onclick (view: View) {
+
+    fun onclick(view: View) {
         val intent = Intent(this, ChooseActivity::class.java)
         startActivity(intent)
     }
-}
-/*    fun startTimer(message: String, seconds: Int) {
-        val intent = Intent(AlarmClock.ACTION_SET_TIMER).apply {
-            putExtra(AlarmClock.EXTRA_MESSAGE, "Test Timer")
-            putExtra(AlarmClock.EXTRA_LENGTH, seconds)
-            putExtra(AlarmClock.EXTRA_SKIP_UI, true)
-        }
-        if (intent.resolveActivity(packageManager) != null) {
-            startActivity(intent)
-        }
-    }*/
 
+    fun startClock() {
+        val intent = Intent(AlarmClock.ACTION_SHOW_TIMERS)
+        startActivity(intent)
+    }
+}
 

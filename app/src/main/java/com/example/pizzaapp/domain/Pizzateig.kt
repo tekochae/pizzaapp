@@ -17,7 +17,7 @@ abstract class Pizzateig(val anzahl: Int, val groesse: Groesse) : Serializable {
     }
 
     fun anzeigeBerechnung(): String {
-        return rezeptBerechnung().joinToString("\n") { "${it.bezeichnung}:\t\t${it.zutatrundenzweistellen}"}
+        return rezeptBerechnung().joinToString("\n") { "${it.bezeichnung}:\t\t${it.zutatrundenzweistellen} Gramm"}
     }
 
 

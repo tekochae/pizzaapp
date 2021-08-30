@@ -33,3 +33,13 @@ fun typMapper(spinnertype: String, anzahl: Int, groesse: Groesse): Pizzateig {
     }
     throw RuntimeException("Nicht supportete Grösse erhalten")
 }
+
+fun fermentiereMapper(spinnerfermentierung:String): Fermentierung{
+    if (spinnerfermentierung.startsWith("Kühlschrank")) {
+        return Fermentierung.Kühlschrank
+    }
+    if (spinnerfermentierung.startsWith("Raumtemperatur")) {
+        return Fermentierung.Raumtemperatur
+    }
+    throw RuntimeException("Fermentierungsvorgehen nicht vorhanden")
+}
