@@ -8,6 +8,9 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
 import com.example.pizzaapp.domain.Pizzateig
+import com.example.pizzaapp.domain.mapper.anzahlMapper
+import com.example.pizzaapp.domain.mapper.groesseMapper
+import com.example.pizzaapp.domain.mapper.typMapper
 
 class ResultActivity : AppCompatActivity() {
     lateinit var spinnerfermentierung: Spinner
@@ -34,6 +37,13 @@ class ResultActivity : AppCompatActivity() {
     }
     fun onclick (view: View) {
         val intent = Intent(this, ChooseActivity::class.java)
+        startActivity(intent)
+    }
+    fun fermentiere(view: View) {
+        // Dropdown Fermentierung val groesseMapper = groesseMapper(spinnergroesse.selectedItem.toString())
+        //Code von Intent Wechsel auf Rezept Activity noch einbinden --> put Extra Tipe Mapper
+
+        val intent = Intent(this, InstructionActivity::class.java)
         startActivity(intent)
     }
 }
