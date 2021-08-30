@@ -1,7 +1,9 @@
 package com.example.pizzaapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
@@ -29,5 +31,9 @@ class ResultActivity : AppCompatActivity() {
             // Apply the adapter to the spinner
             spinnerfermentierung.adapter = adapter
         }
+    }
+    fun onclick (view: View) {
+        val intent = Intent(this, ChooseActivity::class.java)
+        startActivity(intent)
     }
 }
