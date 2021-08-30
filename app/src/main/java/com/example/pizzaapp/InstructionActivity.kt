@@ -24,7 +24,7 @@ class InstructionActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun startClock() {
+    fun startClock(view: View) {
         val intent = Intent(AlarmClock.ACTION_SHOW_TIMERS)
         startActivity(intent)
     }
