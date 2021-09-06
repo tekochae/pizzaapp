@@ -23,13 +23,16 @@ class ChooseActivity : AppCompatActivity() {
         ArrayAdapter.createFromResource(
             this,
             R.array.choosepizzatyp,
+            //R.layout.spinner_item
             R.layout.spinner_item
             //android.R.layout.simple_spinner_item
         ).also { adapter ->
             // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            adapter.setDropDownViewResource(R.layout.spinner_item)
+            adapter.setDropDownViewResource(R.layout.spiner_dropdown_item);
+                    spinnertyp.setAdapter(adapter);
             // Apply the adapter to the spinner
-            spinnertyp.adapter = adapter
+            //spinnertyp.adapter = adapter
         }
 
         spinneranzahl = findViewById(R.id.choosepizzaanzahl);
@@ -37,12 +40,15 @@ class ChooseActivity : AppCompatActivity() {
         ArrayAdapter.createFromResource(
             this,
             R.array.choosepizzaanzahl,
-            android.R.layout.simple_spinner_item
+            R.layout.spinner_item
+            //android.R.layout.simple_spinner_item
         ).also { adapter ->
             // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            adapter.setDropDownViewResource(R.layout.spinner_item)
+            adapter.setDropDownViewResource(R.layout.spiner_dropdown_item);
+            spinneranzahl.setAdapter(adapter);
             // Apply the adapter to the spinner
-            spinneranzahl.adapter = adapter
+            //spinneranzahl.adapter = adapter
         }
 
         spinnergroesse = findViewById(R.id.choosepizzagroesse);
@@ -50,12 +56,15 @@ class ChooseActivity : AppCompatActivity() {
         ArrayAdapter.createFromResource(
             this,
             R.array.choosepizzagroesse,
-            android.R.layout.simple_spinner_item
+            R.layout.spinner_item
+            //android.R.layout.simple_spinner_item
         ).also { adapter ->
             // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            adapter.setDropDownViewResource(R.layout.spinner_item)
+            adapter.setDropDownViewResource(R.layout.spiner_dropdown_item);
+            spinnergroesse.setAdapter(adapter);
             // Apply the adapter to the spinner
-            spinnergroesse.adapter = adapter
+            //spinnergroesse.adapter = adapter
         }
     }
     fun berechne(view: View) {

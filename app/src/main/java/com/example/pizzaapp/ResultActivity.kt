@@ -28,12 +28,15 @@ class ResultActivity : AppCompatActivity() {
         ArrayAdapter.createFromResource(
             this,
             R.array.choosefermentierung,
-            android.R.layout.simple_spinner_item
+            R.layout.spinner_item
+            //android.R.layout.simple_spinner_item
         ).also { adapter ->
             // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            adapter.setDropDownViewResource(R.layout.spinner_item)
+            adapter.setDropDownViewResource(R.layout.spiner_dropdown_item);
+            spinnerfermentierung.setAdapter(adapter);
             // Apply the adapter to the spinner
-            spinnerfermentierung.adapter = adapter
+            //spinnerfermentierung.adapter = adapter
         }
     }
     fun onclick (view: View) {
