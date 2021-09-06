@@ -5,6 +5,6 @@
     android:id="@+id/welcomescreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/hintergrund"
+    android:background="@drawable/startscreen"
     android:onClick="onclick"
     tools:context=".MainActivity" />
